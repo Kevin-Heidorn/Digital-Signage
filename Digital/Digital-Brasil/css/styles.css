@@ -1,0 +1,752 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Cor de fundo geral */
+  color: #333;
+  padding-top: 150px;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+header {
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  width: 100%;
+  position: absolute; /* Começa como absoluto */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0); /* Inicia transparente */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+header.fixed {
+  position: fixed; /* Muda para fixo quando a classe é adicionada */
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo ligeiramente opaco quando fixo */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar o header */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #e6f9e6; /* Verde claro para o texto do logo */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: relative; /* Adicionar para o menu lateral aparecer abaixo do botão */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.nav-links li {
+  font-size: 18px;
+  margin-top: -10%;
+}
+
+.nav-links a {
+  color: #000000; /* Verde claro para o texto dos links */
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: #499c49; /* Verde médio para o fundo ao passar o mouse */
+  color: #e6f9e6; /* Verde claro para o texto ao passar o mouse */
+}
+
+.hamburger {
+  font-family: 'Roboto', sans-serif;
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color:  #499c49;
+  cursor: pointer;
+  position: absolute; /* Usar position absolute para posicionar o botão */
+  top: -40px; /* Ajuste a distância do topo do cabeçalho para subir o botão */
+  right: 1px; /* Mantém a distância da borda direita do cabeçalho */
+  z-index: 1000; /* Garantir que o botão do hambúrguer esteja acima do menu */
+}
+
+/* Estilo do menu lateral para dispositivos móveis */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: -30px; /* Ajuste para ficar logo abaixo do botão do hambúrguer */
+    right: 1px; /* Posiciona o menu lateral à direita do cabeçalho */
+    width: 150px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #89be5d; /* Manter a cor do fundo do menu lateral */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+ }
+
+.hero {
+  background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: rgba(63, 189, 63, 0.8); /* Verde escuro transparente para a seção hero */
+}
+
+.hero h2 {
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+  animation: fadeInUp 2s ease-out; /* Animação do título da hero */
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out; /* Animação das seções */
+}
+
+/* Estilo para a seção Sobre Nós */
+.about-us-section {
+  padding: 60px 20px;
+}
+
+.about-us-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Texto e imagem ficam lado a lado em telas grandes */
+.about-us-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-us-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-us-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-us-image {
+  flex: 1;
+  max-width: 50%;
+  margin-left: 5px; /* Adiciona espaço à esquerda */
+  border-radius: 8px;
+
+}
+
+.about-us-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us-content, .about-us-image {
+    max-width: 100%;
+  }
+
+  .about-us-image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-heading {
+    font-size: 24px;
+  }
+
+  .about-us-text {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para a seção de destaque */
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Estilos para a seção de destaque */
+.highlight-section {
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif; /* Aplicando a fonte */
+}
+
+.carousel-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.carousel-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-caption {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  font-size: 18px; /* Tamanho maior para a legenda */
+  font-weight: 400; /* Peso intermediário para a fonte */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+.highlight-message {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.highlight-message h2 {
+  font-size: 36px; /* Texto maior para o título */
+  margin-bottom: 20px;
+  color: #000000;
+  font-weight: 600; /* Fonte mais negrito */
+}
+
+.highlight-message p {
+  font-size: 18px; /* Texto maior para os parágrafos */
+  color: #555;
+  line-height: 1.6; /* Melhor espaçamento entre linhas */
+  font-weight: 300; /* Fonte mais leve */
+}
+
+
+
+.bg-light {
+  background-color: #e6f9e6; /* Verde muito claro para a seção de fundo */
+}
+
+
+.titulo {
+  font-size: 2rem; /* Diminuindo o tamanho da fonte do título */
+  text-align: center;
+  margin-bottom: 50px; /* Espaçamento para o título */
+  color: #333;
+  position: relative;
+  font-family: Arial, sans-serif; /* Mudando a fonte para uma mais normal */
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px; /* Aumenta o espaçamento entre os cards */
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Aumenta a opacidade para 90% para melhor legibilidade */
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex: 1 1 calc(30% - 40px);
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem; /* Diminuindo o tamanho da fonte do título do card */
+  color: #333;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra leve no texto para melhor contraste */
+  font-family: Arial, sans-serif; /* Mudando a fonte para uma mais normal */
+}
+
+.service-card p {
+  font-size: 0.9rem; /* Diminuindo o tamanho da fonte da descrição */
+  color: #666;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra leve no texto para melhor contraste */
+  font-family: Arial, sans-serif; /* Mudando a fonte para uma mais normal */
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    flex: 1 1 calc(45% - 30px); /* Ajusta a largura dos cards em telas médias */
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card {
+    flex: 1 1 100%; /* Cada card ocupa 100% da largura em telas pequenas */
+  }
+}
+
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-content {
+  width: 50%;
+}
+
+.section-content h2 {
+  font-size: 32px;
+  color: #89be5d;
+  margin-bottom: 15px;
+}
+
+.section-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+.section img {
+  width: 50%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo de seções alternadas para mais dinamismo */
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Espaçamento adicional para a imagem da TV Corporativa */
+.tv-corporativa img {
+  margin: 20px 0; /* Espaço em cima e embaixo da imagem */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    flex: none;
+  }
+
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .section-content {
+    width: 100%;
+  }
+
+  .section img {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .tv-corporativa .section-content {
+    text-align: center;
+  }
+
+  .tv-corporativa img {
+    margin: 20px 0;
+  }
+}
+
+
+
+
+
+
+
+footer {
+  background-color: #A1DD70;  /* Tom de verde escuro */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 -7px 8px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #050505;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-info,
+.footer-social,
+.footer-form {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-info h2,
+.footer-social h2,
+.footer-form h2 {
+  margin-bottom: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+.footer-info p,
+.footer-form input,
+.footer-form textarea {
+  font-size: 16px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-link img:hover {
+  transform: scale(1.1);
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: calc(100% - 20px);  /* Ajuste para o padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.footer-form button {
+  background-color: #53a153;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.footer-form button:hover {
+  background-color: #3bc552;
+}
+
+.footer-info p,
+.footer-form input,
+.footer-form textarea {
+  color: #050505;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-info,
+  .footer-social,
+  .footer-form {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info h2,
+  .footer-social h2,
+  .footer-form h2 {
+    font-size: 18px;
+  }
+
+  .footer-info p,
+  .footer-form input,
+  .footer-form textarea {
+    font-size: 14px;
+  }
+
+  .social-link img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .footer-form input,
+  .footer-form textarea {
+    width: calc(100% - 20px);  /* Ajuste para o padding */
+  }
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos do Carrossel */
+.carousel {
+  position: relative;
+  width: 100%; /* Tornar a largura responsiva */
+  max-width: 800px; /* Limitar a largura máxima */
+  height: auto;
+  aspect-ratio: 4/3; /* Manter a proporção 800x600 */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.carousel-caption h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.carousel-caption p {
+  font-size: 16px;
+}
+
+/* Estilo do botão do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%; /* Botão circular */
+  width: 40px;
+  height: 40px;
+  display: flex; /* Centra o texto/icon dentro do botão */
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Garantir que os botões fiquem acima do conteúdo do carrossel */
+}
+
+/* Botão de navegação anterior */
+.carousel-btn.prev {
+  left: 10px; /* Posiciona o botão à esquerda */
+}
+
+/* Botão de navegação seguinte */
+.carousel-btn.next {
+  right: 10px; /* Posiciona o botão à direita */
+}
+
+/* Garanta que o contêiner do carrossel tenha uma posição relativa */
+.carousel-container {
+  position: relative; /* Necessário para que os botões sejam posicionados corretamente */
+}
+
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media queries para dispositivos menores */
+@media (max-width: 768px) {
+  .carousel-caption h3 {
+    font-size: 18px;
+  }
+
+  .carousel-caption p {
+    font-size: 14px;
+  }
+
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption h3 {
+    font-size: 16px;
+  }
+
+  .carousel-caption p {
+    font-size: 12px;
+  }
+
+  .carousel-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+}
+
+
