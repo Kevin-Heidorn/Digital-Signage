@@ -352,7 +352,7 @@ nav {
 
 .service-title {
   font-size: 1.5rem; /* Diminuindo o tamanho da fonte do título do card */
-  color: #333;
+  color: #176d3d;
   margin-bottom: 15px;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra leve no texto para melhor contraste */
   font-family: Arial, sans-serif; /* Mudando a fonte para uma mais normal */
@@ -458,7 +458,58 @@ nav {
   }
 }
 
+/* Estilo do carrossel */
+.company-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  padding: 40px 0; /* Padding vertical */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* Estilo do título */
+.carousel-title {
+  font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+  font-size: 2.5rem; /* Aumenta o tamanho da fonte para torná-la mais chamativa */
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 600; /* Aumenta o peso da fonte para destaque */
+}
+
+/* Container do carrossel */
+.carousel-container {
+  display: flex;
+  gap: 100px; /* Espaçamento entre logos */
+  overflow-x: auto; /* Adiciona rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Rolagem suave */
+  padding: 20px 0; /* Padding vertical dentro do container */
+}
+
+/* Cada slide do carrossel */
+.carousel-slide {
+  flex: 0 0 auto; /* Impede a quebra de linha */
+  width: 100px; /* Largura fixa para cada logo */
+  height: 100px; /* Altura fixa para cada logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center; /* Centraliza cada item ao parar */
+  overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
+  border-radius: 50%; /* Faz o contêiner redondo */
+}
+
+/* Estilo dos logos */
+.company-logo {
+  max-width: 100%;
+  max-height: 100%; /* Garante que a imagem se ajuste ao contêiner */
+  object-fit: cover; /* Cobre todo o espaço do contêiner mantendo a proporção */
+}
 
 
 

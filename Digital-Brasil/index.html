@@ -7,6 +7,8 @@
   <script src="./scripts/script.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <title>Digital Signage Brasil</title>
   <!-- Importar fontes do Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap">
@@ -171,6 +173,53 @@
   </div>
 </section>
 
+
+
+
+<section id="company-carousel" class="company-carousel">
+  <h2 class="carousel-title">Empresas com Nossas Soluções</h2>
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="/Digital-Brasil/fotos/OIP (6).jfif" alt="Empresa 1" class="company-logo">
+    </div>
+    <div class="carousel-slide">
+      <img src="/Digital-Brasil/fotos/R (1).jfif" alt="Empresa 2" class="company-logo">
+    </div>
+    <div class="carousel-slide">
+      <img src="/Digital-Brasil/fotos/unnamed.png" alt="Empresa 3" class="company-logo">
+    </div>
+    <div class="carousel-slide">
+      <img src="/Digital-Brasil/fotos/avatar-3dIxqE-7215cf26.jpg" alt="Empresa 4" class="company-logo">
+    </div>
+    <div class="carousel-slide">
+      <img src="/Digital-Brasil/fotos/costa-verde.jpg" alt="Empresa 5" class="company-logo">
+    </div>
+  </div>
+</section>
+<script>
+  const container = document.querySelector('.carousel-container');
+  let scrollAmount = 0;
+  
+  const scrollToNext = () => {
+    const slideWidth = container.scrollWidth / container.children.length; // Largura total do container dividido pelo número de slides
+    scrollAmount += slideWidth; // Aumenta a quantidade de rolagem
+
+    // Verifica se atingiu o final
+    if (scrollAmount >= container.scrollWidth) {
+      scrollAmount = 0; // Reseta a rolagem para o início
+    }
+    
+    container.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth' // Rolagem suave
+    });
+  };
+
+  // Faz a rolagem a cada 30 segundos
+  setInterval(scrollToNext, 30000);
+</script>
+
+
  
 
 
@@ -207,29 +256,11 @@ O player é seguro, confiável e se recupera de travamentos automaticamente, gar
 </section>
 
 
-<section id="about-us-section" class="about-us-section">
-  <div class="about-us-container">
-    <div class="about-us-content">
-      <h2 class="about-us-heading">A Maior Empresa de Digital Signage do Brasil</h2>
-      <p class="about-us-text">
-        Na Digital Signage Brasil, somos apaixonados por inovação e comunicação eficaz. Nossa equipe dedicada trabalha incansavelmente para transformar a experiência de interação entre empresas e clientes por meio de soluções de sinalização digital personalizadas e impactantes. 
-      </p>
-      </p>
-    </div>       
-  </div>
-</section>
-
-  
 
 
 
-    
-    <section id="contact" class="section bg-light">
-      <div class="container">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco para saber mais sobre como podemos ajudar sua empresa a alcançar novos patamares de comunicação visual.</p>
-      </div>
-    </section>
+
+
   </main>
 
   <footer>
