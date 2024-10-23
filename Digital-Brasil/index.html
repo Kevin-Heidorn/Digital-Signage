@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./scripts/script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Digital Signage Brasil</title>
+  <!-- Importar fontes do Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="./fotos/DSBRAS.png" alt="Logo Digital Signage">
+      </div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./html/prudutos.html">Loja</a></li>
+          <li><a href="./html/soluçoes.html">Soluções</a></li>
+          <li><a href="./html/contato.html">Contato</a></li>
+          <li><a href="./html/projetos.html">Cases</a></li>
+          <li><a href="./html/midia.html">Midia</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </nav>
+    </div>
+  </header>  
+
+  <main>
+    <section id="carousel" class="highlight-section bg-light">
+      <div class="container carousel-message-container">
+        <!-- Carrossel -->
+        <div class="carousel-section">
+          <div class="carousel">
+            <div class="carousel-items">
+              <div class="carousel-item">
+                <img src="./fotos/edp_corporate_2_1.webp" alt="Imagem 1">
+                <div class="carousel-caption">
+                  <h3>Imagem 1</h3>
+                  <p>Descrição da imagem 1.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./fotos/digitalsignage.jpg" alt="Imagem 2">
+                <div class="carousel-caption">
+                  <h3>Imagem 2</h3>
+                  <p>Descrição da imagem 2.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x600" alt="Imagem 3">
+                <div class="carousel-caption">
+                  <h3>Imagem 3</h3>
+                  <p>Descrição da imagem 3.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn prev" id="prev">&#10094;</button>
+            <button class="carousel-btn next" id="next">&#10095;</button>
+          </div>
+        </div>
+    
+
+        <script>
+          window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+              header.classList.add('fixed'); // Adiciona a classe se a página for rolada
+            } else {
+              header.classList.remove('fixed'); // Remove a classe se estiver no topo
+            }
+          });
+        </script>
+        
+        <!-- Mensagem destacada ao lado do carrossel -->
+        <div class="highlight-message">
+          <h2><strong>Crie, Gerencie e Monitore</strong> com os Softwares da <strong> Digital Signage Brasil</strong></h2>
+          <p>Oferecemos soluções inovadoras que transformam a comunicação visual das empresas, melhorando a experiência do cliente e aumentando a eficiência operacional.</p>
+        </div>
+      </div>
+    </section>
+    
+    
+  <!-- Mural Digital -->
+<section id="services" class="section bg-light">
+  <div class="container">
+    <h2 class="titulo"><strong>Soluções</strong></h2>
+    <div class="service-cards">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Menu Board</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>TV Corporativa</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Mural Digital</strong></h3>
+      </div>
+      <!-- Adicione os novos serviços abaixo -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Visualização remota</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Gerenciamento de usuários</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Criar e gerenciar Organizações</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>API de integração de servidor</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Offline HTML Suporte a arquivos</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="900">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Recursos empresariais</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1000">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Registro de auditoria</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1100">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Upload de fonte personalizada</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1200">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Integração IoT Apoio</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1300">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Serviço 10</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1400">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Serviço 11</strong></h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1500">
+        <a href="./html/soluçoes.html">
+        </a>
+        <h3 class="service-title"><strong>Serviço 12</strong></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+
+
+
+
+<section class="section menu-board">
+  <div class="section-content">
+    <h2>Mostre o conteúdo certo para o público certo no momento certo</h2>
+    <p>Agende a data, hora e dias da semana em que o conteúdo aparecerá em cada tela.
+
+      Segmente a programação por local (cidade, estado, região) ou grupo de pontos de exibição para atingir totalmente seu público-alvo.</p>
+  </div>
+  <img src="/Digital-Brasil/fotos/Code typing-amico.png" alt="TV Corporativa" class="img-fluid">
+</section>
+
+<section class="section tv-corporativa">
+  <div class="section-content">
+    <h2>Acompanhe relatórios de inserção de conteúdo, controle de campanha, análise de público.</h2>
+
+      <p>Tenha relatórios de exibição precisos, confiáveis ​​e auditáveis ​​por terceiros (como o IVC Brasil) para comprovar o desempenho da mídia e tíquetes facilmente seus clientes.</p>
+  </div>
+  <img src="/Digital-Brasil/fotos/Devices-pana.png" alt="TV Corporativa" class="img-fluid">
+
+</section>
+
+<section class="section mural-digital">
+  <div class="section-content">
+    <h2>Jogador multiplataforma à prova de falhas</h2>
+    <p>Seja no Windows, Linux ou Android, com ou sem internet: O Player estará em execução.
+
+O player é seguro, confiável e se recupera de travamentos automaticamente, garantindo que seu conteúdo seja reproduzido nas telas em qualquer situação.</p>
+  </div>
+  <img src="/Digital-Brasil/fotos/Finance-cuate.png" alt="TV Corporativa" class="img-fluid">
+</section>
+
+
+<section id="about-us-section" class="about-us-section">
+  <div class="about-us-container">
+    <div class="about-us-content">
+      <h2 class="about-us-heading">A Maior Empresa de Digital Signage do Brasil</h2>
+      <p class="about-us-text">
+        Na Digital Signage Brasil, somos apaixonados por inovação e comunicação eficaz. Nossa equipe dedicada trabalha incansavelmente para transformar a experiência de interação entre empresas e clientes por meio de soluções de sinalização digital personalizadas e impactantes. 
+      </p>
+      </p>
+    </div>       
+  </div>
+</section>
+
+  
+
+
+
+    
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para saber mais sobre como podemos ajudar sua empresa a alcançar novos patamares de comunicação visual.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>Contate-nos</h2>
+        <p><strong>Endereço:</strong> Av. Tancredo Neves , 939 - Salvador, BA</p>
+        <p><strong>Telefone:</strong> (71) 3341-3666</p>
+        <p><strong>Email:</strong> contato@digitalsignage.com.br</p>
+      </div>
+      <div class="footer-social">
+        <h2>Siga-nos</h2>
+        <div class="social-links">
+          <a href="https://www.facebook.com/digitalsignagebr/" target="_blank" class="social-link"><img src="./fotos/OIP (1).jfif" alt="Facebook"></a>
+          <a href="https://www.youtube.com/dsbras" target="_blank" class="social-link"><img src="./fotos/Symbol-Youtube.png" alt="Youtube"></a>
+          <a href="https://instagram.com" target="_blank" class="social-link"><img src="./fotos/logo instagram yogiancreative.png" alt="Instagram"></a>
+        </div>
+      </div>
+      <div class="footer-form">
+        <h2>Fale Conosco</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Seu Nome" required>
+          <input type="email" name="email" placeholder="Seu Email" required>
+          <textarea name="message" rows="4" placeholder="Sua Mensagem" required></textarea>
+          <button onclick="sendEmail()">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
